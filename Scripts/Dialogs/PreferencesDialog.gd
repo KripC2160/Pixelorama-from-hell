@@ -59,10 +59,7 @@ func _on_Language_pressed(button : Button) -> void:
 	else:
 		TranslationServer.set_locale(Global.loaded_locales[index])
 
-	if TranslationServer.get_locale() == "zh_TW":
-		Global.control.theme.default_font = preload("res://Assets/Fonts/NotoSansCJKtc-Regular.tres")
-	else:
-		Global.control.theme.default_font = preload("res://Assets/Fonts/Roboto-Regular.tres")
+
 
 	Global.config_cache.set_value("preferences", "locale", TranslationServer.get_locale())
 	Global.config_cache.save("user://cache.ini")
@@ -97,13 +94,6 @@ func change_theme(ID : int) -> void:
 		main_theme = preload("res://Themes & Styles/Dark Theme/Dark Theme.tres")
 		top_menu_style = preload("res://Themes & Styles/Dark Theme/DarkTopMenuStyle.tres")
 		ruler_style = preload("res://Themes & Styles/Dark Theme/DarkRulerStyle.tres")
-	elif ID == 1: #Gray Theme
-		Global.theme_type = "Dark"
-		Global.transparent_background.create_from_image(preload("res://Assets/Graphics/Canvas Backgrounds/Transparent Background Gray.png"), 0)
-		VisualServer.set_default_clear_color(Color(0.301961, 0.301961, 0.301961))
-		main_theme = preload("res://Themes & Styles/Gray Theme/Gray Theme.tres")
-		top_menu_style = preload("res://Themes & Styles/Gray Theme/GrayTopMenuStyle.tres")
-		ruler_style = preload("res://Themes & Styles/Dark Theme/DarkRulerStyle.tres")
 	elif ID == 2: #Godot's Theme
 		Global.theme_type = "Dark"
 		Global.transparent_background.create_from_image(preload("res://Assets/Graphics/Canvas Backgrounds/Transparent Background Godot.png"), 0)
@@ -111,21 +101,7 @@ func change_theme(ID : int) -> void:
 		main_theme = preload("res://Themes & Styles/Godot\'s Theme/Godot\'s Theme.tres")
 		top_menu_style = preload("res://Themes & Styles/Godot\'s Theme/TopMenuStyle.tres")
 		ruler_style = preload("res://Themes & Styles/Godot\'s Theme/RulerStyle.tres")
-	elif ID == 3: #Gold Theme
-		Global.theme_type = "Gold"
-		Global.transparent_background.create_from_image(preload("res://Assets/Graphics/Canvas Backgrounds/Transparent Background Gold.png"), 0)
-		VisualServer.set_default_clear_color(Color(0.694118, 0.619608, 0.458824))
-		main_theme = preload("res://Themes & Styles/Gold Theme/Gold Theme.tres")
-		top_menu_style = preload("res://Themes & Styles/Gold Theme/GoldTopMenuStyle.tres")
-		ruler_style = preload("res://Themes & Styles/Gold Theme/GoldRulerStyle.tres")
-	elif ID == 4: #Light Theme
-		Global.theme_type = "Light"
-		Global.transparent_background.create_from_image(preload("res://Assets/Graphics/Canvas Backgrounds/Transparent Background Light.png"), 0)
-		VisualServer.set_default_clear_color(Color(0.705882, 0.705882, 0.705882))
-		main_theme = preload("res://Themes & Styles/Light Theme/Light Theme.tres")
-		top_menu_style = preload("res://Themes & Styles/Light Theme/LightTopMenuStyle.tres")
-		ruler_style = preload("res://Themes & Styles/Light Theme/LightRulerStyle.tres")
-
+	
 	Global.control.theme = main_theme
 	Global.control.theme.default_font = font
 	Global.top_menu_container.add_stylebox_override("panel", top_menu_style)

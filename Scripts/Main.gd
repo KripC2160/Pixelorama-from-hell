@@ -93,12 +93,6 @@ func _ready() -> void:
 	else: # If the user doesn't have a language preference, set it to their OS' locale
 		TranslationServer.set_locale(OS.get_locale())
 
-	if TranslationServer.get_locale() == "zh_TW":
-		theme.default_font = preload("res://Assets/Fonts/NotoSansCJKtc-Regular.tres")
-	else:
-		theme.default_font = preload("res://Assets/Fonts/Roboto-Regular.tres")
-
-
 	file_menu = Global.file_menu.get_popup()
 	var edit_menu : PopupMenu = Global.edit_menu.get_popup()
 	view_menu = Global.view_menu.get_popup()
