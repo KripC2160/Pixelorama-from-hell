@@ -1,5 +1,5 @@
 # Pixelorama from hell - your free and open-source nightmare machine!
-This is a joke obviously, based on the great [Pixelorama](github.com/Orama-Interactive/Pixelorama) by [Orama Interactive](https://www.orama-interactive.com)
+This is a joke obviously, based on the great [Pixelorama](https://github.com/Orama-Interactive/Pixelorama) by [Orama Interactive](https://www.orama-interactive.com)
 
 Download the original thing on itch.io: https://orama-interactive.itch.io/pixelorama
 
