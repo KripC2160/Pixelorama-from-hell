@@ -36,14 +36,14 @@ func _draw() -> void:
 	transform.origin = Global.main_viewport.rect_size / 2 + Global.camera.offset * -zoom
 
 	var basic_rule := 100.0
-	var i := 0
+	var ir := 0
 	while(basic_rule * zoom > 100):
-		basic_rule /= 5.0 if i % 2 else 2.0
-		i += 1
-	i = 0
+		basic_rule /= 5.0 if ir % 2 else 2.0
+		ir += 1
+	ir = 0
 	while(basic_rule * zoom < 100):
-		basic_rule *= 2.0 if i % 2 else 5.0
-		i += 1
+		basic_rule *= 2.0 if ir % 2 else 5.0
+		ir += 1
 
 	ruler_transform = ruler_transform.scaled(Vector2(basic_rule, basic_rule))
 
